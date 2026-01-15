@@ -1,0 +1,55 @@
+{
+  "name": "flareone-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Flareone - Ultra-performance, edge-first framework for Cloudflare Workers",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "edge",
+    "serverless",
+    "framework",
+    "typescript",
+    "flareon"
+  ],
+  "homepage": "https://flareone.dev",
+  "bugs": {
+    "url": "https://github.com/flareonejs/flareon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flareonejs/flareon.git"
+  },
+  "license": "MIT",
+  "author": "Flareone Contributors",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build:core": "turbo run build --filter=@flareone/core",
+    "clean": "turbo run clean && rimraf node_modules",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "lint": "turbo run lint",
+    "prepare": "husky install",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^22.10.0",
+    "husky": "^9.0.0",
+    "prettier": "^3.4.0",
+    "rimraf": "^6.0.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

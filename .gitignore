@@ -1,0 +1,57 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+build
+.next
+out
+*.tsbuildinfo
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage
+.nyc_output
+packages/_drafts
+scripts/
+
+# Cache
+.turbo
+.cache
+*.cache
+
+# Wrangler
+.wrangler
+.dev.vars
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Package manager lockfiles (keep pnpm-lock)
+package-lock.json
+yarn.lock
+
+# Debug
+*.pem

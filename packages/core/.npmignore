@@ -1,0 +1,19 @@
+# Source files
+src/
+tsconfig.json
+tsup.config.ts
+
+# Tests
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Dev files
+.eslintrc*
+.prettierrc*
+.editorconfig
+*.log
+
+# Build artifacts that shouldn't be published
+*.tsbuildinfo

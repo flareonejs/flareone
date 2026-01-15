@@ -1,0 +1,61 @@
+{
+    "name": "@flareone/common",
+    "version": "0.1.0",
+    "description": "Common utilities for Flareone framework",
+    "keywords": [
+        "cloudflare",
+        "workers",
+        "flareon",
+        "utilities",
+        "validation",
+        "pipes"
+    ],
+    "homepage": "https://flareone.dev",
+    "license": "MIT",
+    "author": "Flareone Contributors",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./pipes": {
+            "types": "./dist/pipes/index.d.ts",
+            "import": "./dist/pipes/index.js"
+        },
+        "./guards": {
+            "types": "./dist/guards/index.d.ts",
+            "import": "./dist/guards/index.js"
+        },
+        "./interceptors": {
+            "types": "./dist/interceptors/index.d.ts",
+            "import": "./dist/interceptors/index.js"
+        },
+        "./utils": {
+            "types": "./dist/utils/index.d.ts",
+            "import": "./dist/utils/index.js"
+        }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "clean": "rimraf dist",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@flareone/core": "workspace:*"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20250109.0",
+        "rimraf": "^6.0.0",
+        "tsup": "^8.3.0",
+        "typescript": "^5.7.0"
+    },
+    "sideEffects": false
+}

@@ -1,0 +1,81 @@
+{
+    "name": "@flareone/core",
+    "version": "0.1.0",
+    "description": "Core package for Flareone - Ultra-performance framework for Cloudflare Workers",
+    "keywords": [
+        "cloudflare",
+        "workers",
+        "edge",
+        "serverless",
+        "framework",
+        "typescript",
+        "dependency-injection",
+        "decorators"
+    ],
+    "homepage": "https://flareone.dev",
+    "bugs": {
+        "url": "https://github.com/flareonejs/flareone/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flareonejs/flareone.git",
+        "directory": "packages/core"
+    },
+    "license": "MIT",
+    "author": "Flareone Contributors",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./decorators": {
+            "types": "./dist/decorators/index.d.ts",
+            "import": "./dist/decorators/index.js"
+        },
+        "./di": {
+            "types": "./dist/di/index.d.ts",
+            "import": "./dist/di/index.js"
+        },
+        "./router": {
+            "types": "./dist/router/index.d.ts",
+            "import": "./dist/router/index.js"
+        },
+        "./application": {
+            "types": "./dist/application/index.d.ts",
+            "import": "./dist/application/index.js"
+        }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "clean": "rimraf dist",
+        "dev": "tsup --watch",
+        "lint": "eslint src --ext .ts",
+        "test": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "test:watch": "vitest",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20250109.0",
+        "@types/node": "^22.10.0",
+        "rimraf": "^6.0.0",
+        "tsup": "^8.3.0",
+        "typescript": "^5.7.0",
+        "vitest": "^2.1.0"
+    },
+    "peerDependencies": {
+        "typescript": ">=5.0.0"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "sideEffects": true
+}
