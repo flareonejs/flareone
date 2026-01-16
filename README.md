@@ -29,7 +29,7 @@
 | `@flareone/durable` | Durable Objects helpers | 🚧 WIP |
 | `@flareone/queues` | Queue producers and consumers | 🚧 WIP |
 | `@flareone/ai` | Workers AI integration | 🚧 WIP |
-| `@flareone/validator` | DTO validation (zod/class-validator) | 🚧 WIP |
+| `@flareone/validator` | DTO validation (zod/class-validator style) | ✅ Ready |
 | `@flareone/cli` | CLI tools (generators, dev server) | 🚧 WIP |
 | `@flareone/websocket` | WebSocket utilities | 🚧 WIP |
 | `@flareone/graphql` | GraphQL integration | 🚧 Planned |
