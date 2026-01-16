@@ -48,6 +48,7 @@ pnpm add @flareone/core
 # or
 npm install @flareone/core
 ```
+Note: Ensure experimentalDecorators: true is enabled in your tsconfig.
 
 ### Basic Example
 
