@@ -30,6 +30,7 @@ export type {
     // Injection
     InjectionToken,
     InjectionTokenSymbol,
+    ForwardRef,
 
     // Providers
     Provider,
@@ -97,6 +98,9 @@ export type {
 
 export {
     createToken,
+    forwardRef,
+    isForwardRef,
+    resolveForwardRef,
     isClassProvider,
     isValueProvider,
     isFactoryProvider,

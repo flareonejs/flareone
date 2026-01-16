@@ -62,6 +62,53 @@ export function createToken<T>(description: string): InjectionToken<T> {
     return Symbol.for(`flareone:${description}`);
 }
 
+/**
+ * Symbol to identify forward references
+ */
+export const FORWARD_REF_SYMBOL = Symbol('flareone:forwardRef');
+
+/**
+ * Forward reference wrapper type
+ */
+export interface ForwardRef<T = unknown> {
+    [FORWARD_REF_SYMBOL]: true;
+    forwardRef: () => Type<T>;
+}
+
+/**
+ * Create a forward reference to a class that may not be defined yet.
+ * Use this to resolve circular dependencies between classes.
+ */
+export function forwardRef<T>(fn: () => Type<T>): ForwardRef<T> {
+    return {
+        [FORWARD_REF_SYMBOL]: true,
+        forwardRef: fn,
+    };
+}
+
+/**
+ * Check if a value is a forward reference
+ */
+export function isForwardRef(value: unknown): value is ForwardRef {
+    return (
+        typeof value === 'object' &&
+        value !== null &&
+        FORWARD_REF_SYMBOL in value &&
+        (value as ForwardRef)[FORWARD_REF_SYMBOL] === true
+    );
+}
+
+/**
+ * Resolve a forward reference to the actual class.
+ * If the value is not a forward reference, returns it as-is.
+ */
+export function resolveForwardRef<T>(ref: Type<T> | ForwardRef<T>): Type<T> {
+    if (isForwardRef(ref)) {
+        return ref.forwardRef();
+    }
+    return ref;
+}
+
 /** Class provider - instantiate the class */
 export interface ClassProvider<T = unknown> {
     provide: InjectionToken<T>;

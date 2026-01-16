@@ -24,7 +24,7 @@
 | `@flareone/core` | Core framework (DI, routing, decorators) | ✅ Ready |
 | `@flareone/common` | Guards, interceptors, pipes | ✅ Ready |
 | `@flareone/kv` | Workers KV integration | ✅ Ready |
-| `@flareone/d1` | D1 Database ORM | 🚧 WIP |
+| `@flareone/d1` | D1 Database ORM | ✅ Ready |
 | `@flareone/r2` | R2 Object Storage | 🚧 WIP |
 | `@flareone/durable` | Durable Objects helpers | 🚧 WIP |
 | `@flareone/queues` | Queue producers and consumers | 🚧 WIP |

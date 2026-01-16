@@ -1,14 +1,15 @@
 {
-    "name": "@flareone/common",
+    "name": "@flareone/d1",
     "version": "0.1.1",
-    "description": "Common utilities for Flareone framework",
+    "description": "D1 Database integration for Flareone framework",
     "keywords": [
         "cloudflare",
         "workers",
+        "d1",
         "flareon",
-        "utilities",
-        "validation",
-        "pipes"
+        "database",
+        "sql",
+        "orm"
     ],
     "homepage": "https://flareone.dev",
     "license": "MIT",
@@ -18,22 +19,6 @@
         ".": {
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js"
-        },
-        "./pipes": {
-            "types": "./dist/pipes/index.d.ts",
-            "import": "./dist/pipes/index.js"
-        },
-        "./guards": {
-            "types": "./dist/guards/index.d.ts",
-            "import": "./dist/guards/index.js"
-        },
-        "./interceptors": {
-            "types": "./dist/interceptors/index.d.ts",
-            "import": "./dist/interceptors/index.js"
-        },
-        "./utils": {
-            "types": "./dist/utils/index.d.ts",
-            "import": "./dist/utils/index.js"
         }
     },
     "main": "./dist/index.js",

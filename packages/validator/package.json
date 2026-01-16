@@ -1,6 +1,6 @@
 {
     "name": "@flareone/validator",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Validation decorators and utilities for Flareone framework",
     "keywords": [
         "cloudflare",
@@ -34,7 +34,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
-        "@flareone/core": "workspace:*"
+        "@flareone/core": "workspace:^"
     },
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20250109.0",

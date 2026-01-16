@@ -9,7 +9,11 @@ import {
     defineParameterMetadata,
     getClassMetadata,
 } from '../metadata.js';
-import type { Type, InjectionToken } from '../types.js';
+import type {
+    Type,
+    InjectionToken,
+    ForwardRef,
+} from '../types.js';
 
 export interface InjectableOptions {
     scope?: ProviderScope;
@@ -34,11 +38,11 @@ export interface InjectDecoratorOptions {
 }
 
 export function Inject(
-    token: InjectionToken,
+    token: InjectionToken | ForwardRef,
     options: InjectDecoratorOptions = {}
 ): ParameterDecorator {
     return (target, propertyKey, parameterIndex) => {
-        const deps = getClassMetadata<InjectionToken[]>(
+        const deps = getClassMetadata<Array<InjectionToken | ForwardRef>>(
             INJECTABLE_METADATA.DEPENDENCIES,
             target
         ) ?? [];

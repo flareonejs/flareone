@@ -15,6 +15,7 @@ import type {
     ValueProvider,
     FactoryProvider,
     ExistingProvider,
+    ForwardRef,
 } from '../types.js';
 import {
     isClassProvider as checkClassProvider,
@@ -22,6 +23,8 @@ import {
     isFactoryProvider as checkFactoryProvider,
     isExistingProvider as checkExistingProvider,
     isTypeProvider as checkTypeProvider,
+    isForwardRef,
+    resolveForwardRef,
 } from '../types.js';
 
 interface ProviderRecord<T = unknown> {
@@ -399,7 +402,7 @@ export class Container {
     }
 
     private getConstructorDependencies(cls: Type): Array<{ token: InjectionToken; optional: boolean }> {
-        const registeredDeps = getClassMetadata<InjectionToken[]>(
+        const registeredDeps = getClassMetadata<Array<InjectionToken | ForwardRef>>(
             INJECTABLE_METADATA.DEPENDENCIES,
             cls
         ) ?? [];
@@ -418,6 +421,10 @@ export class Container {
 
         for (let i = 0; i < length; i++) {
             let token = registeredDeps[i];
+
+            if (isForwardRef(token)) {
+                token = resolveForwardRef(token);
+            }
 
             if (!token && implicitTypes[i]) {
                 token = implicitTypes[i];
